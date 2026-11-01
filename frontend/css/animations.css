@@ -1,0 +1,15 @@
+/* ANIMATIONS.CSS — só CSS puro: não depende de JS, então nunca esconde conteúdo por falha de script. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.enter { animation: rise 0.8s ease both; }
+.enter--1 { animation-delay: 0.05s; }
+.enter--2 { animation-delay: 0.2s; }
+.enter--3 { animation-delay: 0.35s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.floating { animation: float 4s ease-in-out infinite; }

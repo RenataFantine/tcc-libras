@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ABOUT.CSS
+   ========================================================================== */
+
+.about {
+  padding-block: var(--space-24);
+  background-color: var(--color-bg-soft);
+}
+
+.about__title {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.about__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+.about__row:last-child {
+  margin-bottom: 0;
+}
+
+.about__row--reverse {
+  flex-direction: row-reverse;
+}
+
+.about__text {
+  flex: 1;
+  font-family: var(--font-secondary);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-heading);
+  line-height: var(--lh-relaxed);
+}
+
+.about__icon {
+  flex: 1;
+  max-width: 260px;
+  margin-inline: auto;
+}
+
+.about__photo {
+  flex: 1;
+  width: 100%;
+  border-radius: var(--radius-md);
+  background-color: var(--color-border); /* fallback visual até a foto real entrar */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .about__row,
+  .about__row--reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,38 @@
+/* ACCESSIBILITY.CSS — tamanho do texto, fonte para dislexia e painel de acessibilidade.
+   Tema claro/escuro: tokens em variables.css (html[data-theme="dark"]). */
+html { font-size: calc(100% * var(--font-scale)); }
+
+/* Fonte adaptada: usa OpenDyslexic se estiver instalada; senão Atkinson Hyperlegible (carregada ao ativar) ou Verdana. */
+html[data-dyslexia="on"] { --font-primary: var(--font-dyslexia); --font-secondary: var(--font-dyslexia); --lh-relaxed: 1.85; }
+html[data-dyslexia="on"] body { letter-spacing: 0.03em; word-spacing: 0.08em; }
+html[data-dyslexia="on"] :is(.prose, .about__text, .card, .page-header, .hero__content) { text-align: left; }
+
+.navbar__container { flex-wrap: wrap; }
+.navbar__nav { margin-left: auto; }
+.a11y { position: relative; margin-left: var(--space-4); }
+.a11y__button { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); color: var(--color-text-heading); font-size: var(--fs-nav); font-weight: var(--fw-medium); transition: background-color var(--transition-fast); }
+.a11y__button:hover, .a11y__button[aria-expanded="true"] { background: var(--color-primary-soft); }
+.a11y__button svg { width: 1.25rem; height: 1.25rem; flex: none; }
+.a11y__panel { position: absolute; top: calc(100% + var(--space-2)); right: 0; z-index: 110; width: 21rem; max-width: calc(100vw - 2rem); max-height: calc(100vh - 6rem); overflow-y: auto; padding: var(--space-6); background: var(--color-surface); border-radius: var(--radius-md); box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18); }
+.a11y__title { font-size: 1.125rem; margin-bottom: var(--space-4); }
+.a11y__group + .a11y__group { margin-top: var(--space-6); }
+.a11y__heading { font-size: 0.8125rem; font-weight: var(--fw-semibold); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-2); }
+.a11y__row { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+.a11y__row--3 { grid-template-columns: repeat(3, 1fr); }
+.a11y__control { display: flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: 44px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); background: var(--color-bg-soft); color: var(--color-text-heading); font-weight: var(--fw-semibold); transition: background-color var(--transition-fast); }
+.a11y__control:hover { background: var(--color-primary-soft); }
+.a11y__control[aria-pressed="true"], .a11y__control[aria-checked="true"] { background: var(--color-primary); color: #fff; }
+.a11y__control[aria-pressed="true"]::before { content: "✓"; }
+.a11y__control[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
+.a11y__switch { width: 100%; justify-content: space-between; text-align: left; }
+.a11y__status, .a11y__hint { margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-text-muted); }
+html[data-theme="dark"] .a11y__control[aria-pressed="true"], html[data-theme="dark"] .a11y__control[aria-checked="true"] { color: #fff; }
+html[data-theme="dark"] .field__error { color: #fca5a5; }
+html[data-theme="dark"] .form-alert { background: #3a1512; color: #fecaca; }
+
+@media (max-width: 768px) {
+  .a11y { position: static; order: 2; margin-left: auto; }
+  .navbar__toggle { order: 3; }
+  .a11y__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .a11y__panel { left: var(--container-padding); right: var(--container-padding); width: auto; max-width: none; }
+}

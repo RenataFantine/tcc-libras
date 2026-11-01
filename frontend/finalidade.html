@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finalidade do projeto | TraduLib</title>
+  <meta name="description" content="Contexto, objetivos, tecnologias e metas do projeto de tradução de Libras em tempo real." />
+  <meta name="color-scheme" content="light dark" />
+  <script>(function(){try{var s=JSON.parse(localStorage.getItem("tradulib_a11y")||"{}"),r=document.documentElement,L=[0.875,1,1.125,1.25,1.375];r.dataset.theme=s.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");if(L[s.level]&&typeof s.level==="number")r.style.setProperty("--font-scale",L[s.level]);if(s.dyslexia===true)r.dataset.dyslexia="on"}catch(e){}})()</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/variables.css?v=5" />
+  <link rel="stylesheet" href="css/reset.css?v=5" />
+  <link rel="stylesheet" href="css/base.css?v=5" />
+  <link rel="stylesheet" href="css/layout.css?v=5" />
+  <link rel="stylesheet" href="css/animations.css?v=5" />
+  <link rel="stylesheet" href="css/components/buttons.css?v=5" />
+  <link rel="stylesheet" href="css/components/navbar.css?v=5" />
+  <link rel="stylesheet" href="css/components/hero.css?v=5" />
+  <link rel="stylesheet" href="css/components/tradutor.css?v=5" />
+  <link rel="stylesheet" href="css/components/about.css?v=5" />
+  <link rel="stylesheet" href="css/components/content.css?v=5" />
+  <link rel="stylesheet" href="css/components/accessibility.css?v=5" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="navbar">
+    <div class="navbar__container container">
+      <a href="index.html" class="navbar__logo" aria-label="TraduLib, página inicial">
+        <span class="navbar__logo-mark" aria-hidden="true">T</span>
+        <span>TraduLib</span>
+      </a>
+      <button class="navbar__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+        <span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span>
+      </button>
+      <nav class="navbar__nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="navbar__links"><li><a href="index.html" class="navbar__link">Home</a></li><li><a href="finalidade.html" class="navbar__link" aria-current="page">Finalidade</a></li><li><a href="tradutor.html" class="navbar__link">Tradutor</a></li><li><a href="comunidade.html" class="navbar__link">Comunidade</a></li><li><a href="comunidade.html#contato" class="navbar__link">Contatos</a></li><li><a href="administrador.html" class="navbar__link">Administrador</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="page-header" aria-labelledby="pg-titulo"><div class="container"><div class="page-header__inner enter enter--1">
+      <p class="eyebrow">Finalidade</p><h1 id="pg-titulo">Finalidade do projeto</h1>
+      <p class="lead">Apresentação institucional do trabalho: contexto, objetivos e importância social.</p></div></div></section>
+
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Sobre o projeto</p><h2 id="sobre-titulo">Inclusão da comunidade surda por meio da TI</h2></div>
+      <div class="prose"><p>O projeto <strong>Inclusão da comunidade surda por meio da TI</strong> busca desenvolver um sistema inteligente de tradução de Libras em tempo real, utilizando visão computacional e inteligência artificial para facilitar a comunicação entre pessoas surdas e profissionais durante atendimentos presenciais.</p>
+      <p>A proposta é utilizar a tecnologia como intermediadora da comunicação, contribuindo para reduzir barreiras linguísticas e ampliar as possibilidades de acesso a serviços de atendimento.</p></div>
+    </div></section>
+
+    <section class="section section--soft" id="contexto" aria-labelledby="ctx-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Contexto e problema</p><h2 id="ctx-titulo">A barreira da comunicação</h2></div>
+      <div class="prose"><p>Pessoas surdas ainda enfrentam dificuldades de comunicação em serviços públicos e outros ambientes de atendimento. A ausência de comunicação acessível pode dificultar o acesso aos serviços e comprometer a autonomia da pessoa surda.</p>
+      <p>Diante desse cenário, o projeto propõe uma solução tecnológica que auxilie na comunicação entre a pessoa surda e o atendente, com reconhecimento de sinais, processamento de imagens e conversão de informações.</p></div>
+    </div></section>
+
+    <section class="section" id="objetivos" aria-labelledby="obj-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Objetivos</p><h2 id="obj-titulo">Objetivo geral e objetivos específicos</h2></div>
+      <p class="statement">Desenvolver um sistema inteligente de atendimento em Libras para facilitar a comunicação entre pessoas surdas e profissionais durante o atendimento.</p>
+      <h3 class="stack-link">Objetivos específicos</h3>
+      <ul class="grid"><li class="card"><span class="card__badge" aria-hidden="true">1</span><p>Investigar tecnologias de visão computacional e acessibilidade.</p></li><li class="card"><span class="card__badge" aria-hidden="true">2</span><p>Desenvolver o reconhecimento de sinais em Libras.</p></li><li class="card"><span class="card__badge" aria-hidden="true">3</span><p>Converter os sinais reconhecidos em texto e áudio.</p></li><li class="card"><span class="card__badge" aria-hidden="true">4</span><p>Estruturar a comunicação no sentido português → Libras.</p></li><li class="card"><span class="card__badge" aria-hidden="true">5</span><p>Avaliar o desempenho e a acessibilidade do sistema.</p></li></ul>
+    </div></section>
+
+    <section class="section section--soft" id="tecnologias" aria-labelledby="tec-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Tecnologias utilizadas</p><h2 id="tec-titulo">Cada ferramenta com o seu propósito</h2></div><ul class="grid"><li class="card"><span class="card__badge" aria-hidden="true">Py</span><h3>Python</h3><p>Linguagem utilizada no desenvolvimento e na integração principal do sistema.</p></li><li class="card"><span class="card__badge" aria-hidden="true">CV</span><h3>OpenCV</h3><p>Captura e processamento de imagens.</p></li><li class="card"><span class="card__badge" aria-hidden="true">MP</span><h3>MediaPipe</h3><p>Detecção e extração dos pontos das mãos.</p></li><li class="card"><span class="card__badge" aria-hidden="true">TF</span><h3>TensorFlow</h3><p>Classificação dos sinais por meio de aprendizado de máquina.</p></li><li class="card"><span class="card__badge" aria-hidden="true">Fl</span><h3>Flask</h3><p>Comunicação e integração entre os componentes do sistema.</p></li><li class="card"><span class="card__badge" aria-hidden="true">PG</span><h3>PostgreSQL</h3><p>Armazenamento das estatísticas de utilização.</p></li><li class="card"><span class="card__badge" aria-hidden="true">TTS</span><h3>gTTS</h3><p>Conversão de texto em áudio.</p></li></ul>
+    </div></section>
+
+    <section class="section" id="diferencial" aria-labelledby="dif-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Diferencial do projeto</p><h2 id="dif-titulo">Mais do que reconhecer sinais</h2></div>
+      <div class="prose"><p>O diferencial proposto está na integração entre reconhecimento de Libras, tradução, comunicação bidirecional e acessibilidade. A solução busca atuar como intermediadora da comunicação, contemplando os dois sentidos do atendimento: Libras para texto e áudio, e português para representação visual em Libras.</p></div>
+      <div style="height:var(--space-8)"></div><div class="bidirectional" role="group" aria-label="Comunicação nos dois sentidos entre a pessoa surda e a pessoa ouvinte">
+  <div class="bidirectional__party"><strong>Pessoa surda</strong><span>comunica-se em Libras</span></div>
+  <div class="bidirectional__channel" aria-hidden="true">
+    <div>Libras → texto e áudio<div class="bidirectional__arrow"></div></div>
+    <div>Português → representação visual em Libras<div class="bidirectional__arrow bidirectional__arrow--back"></div></div>
+  </div>
+  <div class="bidirectional__party"><strong>Pessoa Ouvinte</strong><span>comunica-se em português</span></div>
+</div>
+    </div></section>
+
+    <section class="section section--soft" id="metas" aria-labelledby="metas-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Metas e avaliação</p><h2 id="metas-titulo">Metas esperadas do projeto</h2></div>
+      <ul class="grid">
+        <li class="card"><span class="card__figure">≥ 85%</span><p>Acurácia mínima esperada no reconhecimento dos sinais.</p></li>
+        <li class="card"><span class="card__figure">≤ 2 s</span><p>Tempo máximo esperado de resposta do sistema.</p></li>
+        <li class="card"><span class="card__figure">+ sinais</span><p>Expansão futura do conjunto de sinais reconhecidos.</p></li>
+        <li class="card"><span class="card__figure">Testes</span><p>Avaliação por testes de desempenho, reconhecimento e acessibilidade.</p></li>
+      </ul>
+      <p class="callout prose"><strong>Importante:</strong> os valores acima são metas de desenvolvimento, não resultados obtidos. Só serão apresentados como resultados se houver testes reais que os comprovem.</p>
+    </div></section>
+
+    <section class="section" id="fundamentacao" aria-labelledby="fund-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Fundamentação teórica</p><h2 id="fund-titulo">Referência preliminar</h2></div>
+      <div class="prose"><p>Perdomo e Siqueira — <em>Reconhecimento de sinais estáticos de LIBRAS com Support Vector Machines usando Kinect.</em></p></div>
+    </div></section>
+
+    <section class="section section--soft" id="demonstracao" aria-labelledby="demo-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Demonstração</p><h2 id="demo-titulo">Demonstração em Libras</h2><p class="lead">Confira uma demonstração prática do projeto e conheça a proposta de utilização da tecnologia para apoiar a comunicação em Libras.</p></div>
+      <div class="media-frame" data-demo-video></div>
+    </div></section>
+
+    <section class="cta" aria-labelledby="cta-titulo"><div class="container">
+      <h2 id="cta-titulo">Tecnologia para aproximar pessoas.</h2>
+      <p>O resultado esperado é uma solução capaz de contribuir para a redução de barreiras de comunicação, facilitar o atendimento de pessoas surdas e usar visão computacional e inteligência artificial como apoio à acessibilidade em atendimentos presenciais.</p>
+      <div class="cta__actions"><a class="btn btn--light btn--lg" href="tradutor.html">Conhecer o tradutor</a></div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <div>
+        <p class="footer__title">TraduLib</p>
+        <p>Inclusão da comunidade surda por meio da TI: desenvolvimento de um sistema inteligente de tradução de Libras em tempo real.</p>
+      </div>
+      <nav aria-label="Rodapé"><p class="footer__heading">Navegação</p><ul><li><a href="index.html">Home</a></li><li><a href="finalidade.html">Finalidade</a></li><li><a href="tradutor.html">Tradutor</a></li><li><a href="comunidade.html">Comunidade</a></li><li><a href="administrador.html">Administrador</a></li></ul></nav>
+      <div>
+        <p class="footer__heading">Projeto acadêmico</p>
+        <ul data-members="footer"></ul>
+        <p>Gestão da Tecnologia da Informação — Fatec</p>
+      </div>
+    </div>
+    <p class="footer__legal container">Trabalho acadêmico. O sistema não pretende substituir intérpretes humanos de Libras.</p>
+  </footer>
+
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget("https://vlibras.gov.br/app");</script>
+  <script type="module" src="js/main.js?v=5"></script>
+</body>
+</html>

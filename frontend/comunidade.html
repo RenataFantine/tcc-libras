@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunidade | TraduLib</title>
+  <meta name="description" content="Acessibilidade, tecnologia e comunicação: a finalidade social do projeto e contato com os integrantes." />
+  <meta name="color-scheme" content="light dark" />
+  <script>(function(){try{var s=JSON.parse(localStorage.getItem("tradulib_a11y")||"{}"),r=document.documentElement,L=[0.875,1,1.125,1.25,1.375];r.dataset.theme=s.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");if(L[s.level]&&typeof s.level==="number")r.style.setProperty("--font-scale",L[s.level]);if(s.dyslexia===true)r.dataset.dyslexia="on"}catch(e){}})()</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/variables.css?v=5" />
+  <link rel="stylesheet" href="css/reset.css?v=5" />
+  <link rel="stylesheet" href="css/base.css?v=5" />
+  <link rel="stylesheet" href="css/layout.css?v=5" />
+  <link rel="stylesheet" href="css/animations.css?v=5" />
+  <link rel="stylesheet" href="css/components/buttons.css?v=5" />
+  <link rel="stylesheet" href="css/components/navbar.css?v=5" />
+  <link rel="stylesheet" href="css/components/hero.css?v=5" />
+  <link rel="stylesheet" href="css/components/tradutor.css?v=5" />
+  <link rel="stylesheet" href="css/components/about.css?v=5" />
+  <link rel="stylesheet" href="css/components/content.css?v=5" />
+  <link rel="stylesheet" href="css/components/accessibility.css?v=5" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="navbar">
+    <div class="navbar__container container">
+      <a href="index.html" class="navbar__logo" aria-label="TraduLib, página inicial">
+        <span class="navbar__logo-mark" aria-hidden="true">T</span>
+        <span>TraduLib</span>
+      </a>
+      <button class="navbar__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+        <span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span>
+      </button>
+      <nav class="navbar__nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="navbar__links"><li><a href="index.html" class="navbar__link">Home</a></li><li><a href="finalidade.html" class="navbar__link">Finalidade</a></li><li><a href="tradutor.html" class="navbar__link">Tradutor</a></li><li><a href="comunidade.html" class="navbar__link" aria-current="page">Comunidade</a></li><li><a href="comunidade.html#contato" class="navbar__link">Contatos</a></li><li><a href="administrador.html" class="navbar__link">Administrador</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="page-header" aria-labelledby="pg-titulo"><div class="container"><div class="page-header__inner enter enter--1">
+      <p class="eyebrow">Comunidade</p><h1 id="pg-titulo">Tecnologia, inclusão e comunicação</h1>
+      <p class="lead">A acessibilidade na comunicação é um elemento importante para a participação social e para o acesso a serviços. Este projeto investiga como a TI pode contribuir para aproximar pessoas surdas e profissionais de atendimento, oferecendo uma alternativa tecnológica de apoio à comunicação.</p></div></div></section>
+
+    <section class="section" id="pilares" aria-labelledby="pil-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Três pilares</p><h2 id="pil-titulo">O que sustenta a proposta</h2></div>
+      <ul class="grid">
+        <li class="card card--pillar"><h3>Acessibilidade</h3><p>Promover uma experiência digital mais acessível e considerar as necessidades das pessoas surdas.</p></li>
+        <li class="card card--pillar"><h3>Tecnologia</h3><p>Aplicar visão computacional, inteligência artificial e processamento de informações na construção de uma solução assistiva.</p></li>
+        <li class="card card--pillar"><h3>Comunicação</h3><p>Utilizar a tecnologia como intermediadora para reduzir dificuldades de entendimento durante o atendimento.</p></li>
+      </ul>
+      <p class="callout prose">Ainda não há funcionalidades comunitárias nesta versão: a página apresenta a finalidade social e acadêmica da iniciativa.</p>
+    </div></section>
+
+    <section class="section section--soft" id="contato" aria-labelledby="contato-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Contato</p><h2 id="contato-titulo">Fale com os integrantes</h2><p class="lead">Projeto acadêmico do curso de Gestão da Tecnologia da Informação — Fatec.</p></div>
+      <ul class="grid" data-members="cards"></ul>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <div>
+        <p class="footer__title">TraduLib</p>
+        <p>Inclusão da comunidade surda por meio da TI: desenvolvimento de um sistema inteligente de tradução de Libras em tempo real.</p>
+      </div>
+      <nav aria-label="Rodapé"><p class="footer__heading">Navegação</p><ul><li><a href="index.html">Home</a></li><li><a href="finalidade.html">Finalidade</a></li><li><a href="tradutor.html">Tradutor</a></li><li><a href="comunidade.html">Comunidade</a></li><li><a href="administrador.html">Administrador</a></li></ul></nav>
+      <div>
+        <p class="footer__heading">Projeto acadêmico</p>
+        <ul data-members="footer"></ul>
+        <p>Gestão da Tecnologia da Informação — Fatec</p>
+      </div>
+    </div>
+    <p class="footer__legal container">Trabalho acadêmico. O sistema não pretende substituir intérpretes humanos de Libras.</p>
+  </footer>
+
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget("https://vlibras.gov.br/app");</script>
+  <script type="module" src="js/main.js?v=5"></script>
+</body>
+</html>

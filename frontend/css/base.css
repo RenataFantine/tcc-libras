@@ -1,0 +1,39 @@
+/* ==========================================================================
+   BASE.CSS
+   Estilos globais de tipografia e elementos padrão (h1-h4, p, body).
+   Nenhum seletor de componente aqui — isso fica em components/.
+   ========================================================================== */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-body);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-heading);
+  line-height: var(--lh-tight);
+}
+
+h1 {
+  font-size: var(--fs-hero-title);
+}
+
+h2 {
+  font-size: var(--fs-section-title);
+}
+
+p {
+  line-height: var(--lh-relaxed);
+}
+
+a {
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}

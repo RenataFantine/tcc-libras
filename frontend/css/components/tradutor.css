@@ -1,0 +1,212 @@
+/* ==========================================================================
+   TRADUTOR.CSS
+   Seção com vídeo de demonstração do tradutor em tempo real.
+   ========================================================================== */
+
+.tradutor {
+  padding-block: var(--space-24);
+}
+
+.tradutor__intro {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.tradutor__subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--fs-subtitle);
+}
+
+.tradutor__video-wrapper {
+  max-width: 900px;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: #000;
+}
+
+.tradutor__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* ==========================================================================
+   INTERFACE DO TRADUTOR — integração com o Flask
+   ========================================================================== */
+
+.translator {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, 16px);
+  background: var(--color-surface, #16213a);
+  color: var(--color-text, #f4f6fc);
+  box-shadow: var(--shadow-md);
+}
+
+.translator__header {
+  margin-bottom: 24px;
+}
+
+.translator__header h3 {
+  margin-bottom: 8px;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+.translator__header p {
+  color: var(--color-text-muted, #b8c3d9);
+  line-height: 1.6;
+}
+
+.translator__camera {
+  display: flex;
+  min-height: 280px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px dashed var(--color-border, #53617c);
+  border-radius: var(--radius-md, 12px);
+  background: rgba(0, 0, 0, 0.16);
+  text-align: center;
+}
+
+.translator__camera-icon {
+  font-size: 2.5rem;
+}
+
+.translator__camera p {
+  color: var(--color-text-muted, #b8c3d9);
+}
+
+.translator__result {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.translator__result h4 {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.translator__result p {
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(127, 145, 180, 0.12);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.translator__result p strong,
+.translator__result p span {
+  display: block;
+}
+
+.translator__result p strong {
+  margin-bottom: 6px;
+}
+
+.translator__status {
+  margin-block: 20px 16px;
+  color: var(--color-text-muted, #b8c3d9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.translator__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.translator__actions button {
+  min-height: 44px;
+}
+
+.translator__actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 650px) {
+  .translator {
+    padding: 18px;
+  }
+
+  .translator__camera {
+    min-height: 220px;
+  }
+
+  .translator__result {
+    grid-template-columns: 1fr;
+  }
+
+  .translator__result h4 {
+    grid-column: auto;
+  }
+
+  .translator__actions {
+    flex-direction: column;
+  }
+
+  .translator__actions button {
+    width: 100%;
+  }
+}
+
+/* Transmissão da câmera dentro do painel */
+
+.translator__camera {
+  position: relative;
+  overflow: hidden;
+}
+
+.translator__camera img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: var(--radius-md, 12px);
+}
+
+.translator__camera img[hidden] {
+  display: none;
+}
+
+.translator__camera-icon[hidden] {
+  display: none;
+}
+.hand-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 12px;
+    transition: 0.3s ease;
+}
+
+.hand-indicator--waiting {
+    color: #b7791f;
+    background: #fff4d6;
+}
+
+.hand-indicator--detected {
+    color: #16804a;
+    background: #dcfce7;
+}

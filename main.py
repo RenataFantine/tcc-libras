@@ -1,5 +1,5 @@
 from src.utils.logger import setup_logger
-from src.vasion.camera import iniciar_camera
+from src.vision.camera import iniciar_camera
 
 logger = setup_logger()
 

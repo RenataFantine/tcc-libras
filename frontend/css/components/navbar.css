@@ -1,0 +1,99 @@
+/* NAVBAR.CSS — .is-open e .is-scrolled são controladas por js/modules/navbar.js.
+   Página atual: aria-current="page" no HTML. */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-header-bg);
+  backdrop-filter: blur(10px);
+  transition: box-shadow var(--transition-base);
+}
+.navbar.is-scrolled { box-shadow: var(--shadow-md); }
+.navbar__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--fw-semibold);
+  font-size: 1.125rem;
+  color: var(--color-text-heading);
+}
+.navbar__logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+}
+.navbar__toggle { display: none; flex-direction: column; gap: 4px; padding: var(--space-2); }
+.navbar__toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-heading);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-fast);
+}
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(2) { opacity: 0; }
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.navbar__nav { display: flex; align-items: center; gap: var(--space-8); }
+.navbar__links { display: flex; gap: var(--space-6); }
+.navbar__link {
+  position: relative;
+  padding-block: var(--space-2);
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-body);
+}
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+.navbar__link:hover,
+.navbar__link[aria-current="page"] { color: var(--color-primary-dark); }
+.navbar__link:hover::after,
+.navbar__link[aria-current="page"]::after { transform: scaleX(1); }
+
+@media (max-width: 768px) {
+  .navbar__toggle { display: flex; }
+  .navbar__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-6) var(--container-padding);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-base), opacity var(--transition-base), visibility var(--transition-base);
+  }
+  .navbar__nav.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
+  .navbar__links { flex-direction: column; gap: var(--space-2); width: 100%; }
+  .navbar__link { display: inline-block; }
+  .navbar__cta { width: 100%; }
+}

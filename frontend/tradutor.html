@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tradutor de Libras em tempo real | TraduLib</title>
+  <meta name="description" content="Área do tradutor, demonstração em vídeo, fluxo e comunicação bidirecional." />
+  <meta name="color-scheme" content="light dark" />
+  <script>(function(){try{var s=JSON.parse(localStorage.getItem("tradulib_a11y")||"{}"),r=document.documentElement,L=[0.875,1,1.125,1.25,1.375];r.dataset.theme=s.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");if(L[s.level]&&typeof s.level==="number")r.style.setProperty("--font-scale",L[s.level]);if(s.dyslexia===true)r.dataset.dyslexia="on"}catch(e){}})()</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/variables.css?v=5" />
+  <link rel="stylesheet" href="css/reset.css?v=5" />
+  <link rel="stylesheet" href="css/base.css?v=5" />
+  <link rel="stylesheet" href="css/layout.css?v=5" />
+  <link rel="stylesheet" href="css/animations.css?v=5" />
+  <link rel="stylesheet" href="css/components/buttons.css?v=5" />
+  <link rel="stylesheet" href="css/components/navbar.css?v=5" />
+  <link rel="stylesheet" href="css/components/hero.css?v=5" />
+  <link rel="stylesheet" href="css/components/tradutor.css?v=5" />
+  <link rel="stylesheet" href="css/components/about.css?v=5" />
+  <link rel="stylesheet" href="css/components/content.css?v=5" />
+  <link rel="stylesheet" href="css/components/accessibility.css?v=5" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="navbar">
+    <div class="navbar__container container">
+      <a href="index.html" class="navbar__logo" aria-label="TraduLib, página inicial">
+        <span class="navbar__logo-mark" aria-hidden="true">T</span>
+        <span>TraduLib</span>
+      </a>
+      <button class="navbar__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+        <span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span>
+      </button>
+      <nav class="navbar__nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="navbar__links"><li><a href="index.html" class="navbar__link">Home</a></li><li><a href="finalidade.html" class="navbar__link">Finalidade</a></li><li><a href="tradutor.html" class="navbar__link" aria-current="page">Tradutor</a></li><li><a href="comunidade.html" class="navbar__link">Comunidade</a></li><li><a href="comunidade.html#contato" class="navbar__link">Contatos</a></li><li><a href="administrador.html" class="navbar__link">Administrador</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="page-header" aria-labelledby="pg-titulo"><div class="container"><div class="page-header__inner enter enter--1">
+      <p class="eyebrow">Tradutor</p><h1 id="pg-titulo">Tradutor de Libras em tempo real</h1>
+      <p class="lead">Uma proposta de tecnologia assistiva para apoiar a comunicação entre pessoas surdas e profissionais de atendimento, utilizando recursos de visão computacional e inteligência artificial.</p></div></div></section>
+
+    <section class="section" id="tradutor-app" aria-labelledby="app-titulo"><div class="container">
+      <div class="section__header"><h2 id="app-titulo">Tradutor</h2></div>
+      <!-- INTEGRAÇÃO DO SISTEMA REAL: monte a aplicação dentro de #tradutor-app-container
+           (ex.: um componente/script do próprio projeto que renderize a câmera, os resultados e os controles).
+           Ao conectar, remova o <p class="app-frame__note"> abaixo. Não há iframe nem URL definida. -->
+      <div class="app-frame" id="tradutor-app-container">
+
+  <div class="translator__camera">
+
+    <img
+      id="camera-feed"
+      src=""
+      alt="Imagem da câmera durante o reconhecimento de Libras"
+      hidden
+    />
+
+    <div id="camera-placeholder" class="translator__camera-icon">
+      <p>A câmera será exibida aqui.</p>
+    </div>
+
+  </div>
+
+  <div id="hand-indicator" class="hand-indicator hand-indicator--waiting">
+    Nenhuma mão detectada
+  </div>
+
+  <div class="translator__controls">
+    <button id="start-recognition" type="button">
+      Iniciar reconhecimento
+    </button>
+
+    <button id="stop-recognition" type="button">
+      Parar reconhecimento
+    </button>
+  </div>
+
+  <div class="translator__result">
+    <h3>Sinal reconhecido</h3>
+    <p id="recognized-sign">Aguardando sinal...</p>
+
+    <h3>Tradução</h3>
+    <p id="translated-text">A tradução aparecerá aqui.</p>
+  </div>
+
+</div>
+    </div></section>
+
+    <section class="section section--soft" id="demonstracao" aria-labelledby="demo-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Demonstração</p><h2 id="demo-titulo">Demonstração em Libras</h2><p class="lead">Confira uma demonstração prática do projeto e conheça a proposta de utilização da tecnologia para apoiar a comunicação em Libras.</p></div>
+      <div class="media-frame" data-demo-video></div>
+    </div></section>
+
+    <section class="section" id="fluxo" aria-labelledby="fluxo-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Fluxo de funcionamento</p><h2 id="fluxo-titulo">Do movimento das mãos à comunicação</h2></div><ol class="steps"><li class="steps__item"><span class="steps__number" aria-hidden="true">1</span><div><h3>Captura</h3><p>A câmera captura os movimentos das mãos.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">2</span><div><h3>Detecção</h3><p>O MediaPipe identifica os pontos das mãos.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">3</span><div><h3>Reconhecimento</h3><p>O modelo de inteligência artificial classifica o sinal realizado.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">4</span><div><h3>Tradução</h3><p>O sistema converte o sinal reconhecido em texto e/ou áudio.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">5</span><div><h3>Comunicação</h3><p>A informação é apresentada ao atendente.</p></div></li></ol>
+    </div></section>
+
+    <section class="section section--soft" id="bidirecional" aria-labelledby="bi-titulo"><div class="container">
+      <div class="section__header"><p class="eyebrow">Comunicação bidirecional</p><h2 id="bi-titulo">Os dois sentidos do atendimento</h2></div><div class="bidirectional" role="group" aria-label="Comunicação nos dois sentidos entre a pessoa surda e o atendente">
+  <div class="bidirectional__party"><strong>Pessoa surda</strong><span>comunica-se em Libras</span></div>
+  <div class="bidirectional__channel" aria-hidden="true">
+    <div>Libras → texto e áudio<div class="bidirectional__arrow"></div></div>
+    <div>Português → representação visual em Libras<div class="bidirectional__arrow bidirectional__arrow--back"></div></div>
+  </div>
+  <div class="bidirectional__party"><strong>Pessoa Ouvinte</strong><span>comunica-se em português</span></div>
+</div>
+      <ul class="grid">
+        <li class="card"><span class="card__badge" aria-hidden="true">→</span><h3>Libras → Português</h3><p>Reconhecimento dos sinais feitos pela pessoa surda, com resultado em texto e/ou áudio, conforme as funcionalidades efetivamente disponíveis.</p></li>
+        <li class="card"><span class="card__badge" aria-hidden="true">←</span><h3>Português → Libras</h3><p>Representação visual em Libras a partir do conteúdo em português, conforme a implementação real do projeto.</p></li>
+      </ul>
+      <p class="callout prose">Esta página não afirma que a tradução bidirecional completa já está implementada.</p>
+    </div></section>
+
+    <section class="cta" aria-labelledby="cta-titulo"><div class="container">
+      <h2 id="cta-titulo">Quer entender o contexto do projeto?</h2>
+      <p>Conheça a finalidade do trabalho, seus objetivos e as tecnologias envolvidas.</p>
+      <div class="cta__actions"><a class="btn btn--light btn--lg" href="finalidade.html">Conhecer a finalidade</a></div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <div>
+        <p class="footer__title">TraduLib</p>
+        <p>Inclusão da comunidade surda por meio da TI: desenvolvimento de um sistema inteligente de tradução de Libras em tempo real.</p>
+      </div>
+      <nav aria-label="Rodapé"><p class="footer__heading">Navegação</p><ul><li><a href="index.html">Home</a></li><li><a href="finalidade.html">Finalidade</a></li><li><a href="tradutor.html">Tradutor</a></li><li><a href="comunidade.html">Comunidade</a></li><li><a href="administrador.html">Administrador</a></li></ul></nav>
+      <div>
+        <p class="footer__heading">Projeto acadêmico</p>
+        <ul data-members="footer"></ul>
+        <p>Gestão da Tecnologia da Informação — Fatec</p>
+      </div>
+    </div>
+    <p class="footer__legal container">Trabalho acadêmico. O sistema não pretende substituir intérpretes humanos de Libras.</p>
+  </footer>
+
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget("https://vlibras.gov.br/app");</script>
+  <script type="module" src="js/main.js?v=5"></script>
+</body>
+</html>

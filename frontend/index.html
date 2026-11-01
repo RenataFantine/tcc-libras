@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inclusão da comunidade surda por meio da TI | TraduLib</title>
+  <meta name="description" content="Sistema inteligente de tradução de Libras em tempo real: projeto acadêmico de TI da Fatec." />
+  <meta name="color-scheme" content="light dark" />
+  <script>(function(){try{var s=JSON.parse(localStorage.getItem("tradulib_a11y")||"{}"),r=document.documentElement,L=[0.875,1,1.125,1.25,1.375];r.dataset.theme=s.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");if(L[s.level]&&typeof s.level==="number")r.style.setProperty("--font-scale",L[s.level]);if(s.dyslexia===true)r.dataset.dyslexia="on"}catch(e){}})()</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/variables.css?v=5" />
+  <link rel="stylesheet" href="css/reset.css?v=5" />
+  <link rel="stylesheet" href="css/base.css?v=5" />
+  <link rel="stylesheet" href="css/layout.css?v=5" />
+  <link rel="stylesheet" href="css/animations.css?v=5" />
+  <link rel="stylesheet" href="css/components/buttons.css?v=5" />
+  <link rel="stylesheet" href="css/components/navbar.css?v=5" />
+  <link rel="stylesheet" href="css/components/hero.css?v=5" />
+  <link rel="stylesheet" href="css/components/tradutor.css?v=5" />
+  <link rel="stylesheet" href="css/components/about.css?v=5" />
+  <link rel="stylesheet" href="css/components/content.css?v=5" />
+  <link rel="stylesheet" href="css/components/accessibility.css?v=5" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="navbar">
+    <div class="navbar__container container">
+      <a href="index.html" class="navbar__logo" aria-label="TraduLib, página inicial">
+        <span class="navbar__logo-mark" aria-hidden="true">T</span>
+        <span>TraduLib</span>
+      </a>
+      <button class="navbar__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+        <span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span><span class="navbar__toggle-bar"></span>
+      </button>
+      <nav class="navbar__nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="navbar__links"><li><a href="index.html" class="navbar__link" aria-current="page">Home</a></li><li><a href="finalidade.html" class="navbar__link">Finalidade</a></li><li><a href="tradutor.html" class="navbar__link">Tradutor</a></li><li><a href="comunidade.html" class="navbar__link">Comunidade</a></li><li><a href="comunidade.html#contato" class="navbar__link">Contatos</a></li><li><a href="administrador.html" class="navbar__link">Administrador</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__container container">
+        <div class="hero__content">
+          <p class="eyebrow enter enter--1">TCC · Gestão da Tecnologia da Informação · Fatec</p>
+          <h1 class="hero__title enter enter--2" id="hero-title">Inclusão da <span class="hero__highlight">comunidade surda</span> por meio da TI</h1>
+          <p class="hero__subtitle enter enter--2">Desenvolvimento de um sistema inteligente de tradução de Libras em tempo real.</p>
+          <p class="hero__text enter enter--3">Visão computacional e inteligência artificial aplicadas à acessibilidade e à comunicação em atendimentos presenciais.</p>
+          <div class="hero__actions enter enter--3">
+            <a class="btn btn--primary btn--lg" href="tradutor.html">Conhecer o tradutor <span aria-hidden="true">→</span></a>
+            <a class="btn btn--secondary btn--lg" href="finalidade.html">Conhecer o projeto</a>
+          </div>
+        </div>
+        <div class="hero__media enter enter--2">
+          <img class="floating" src="assets/icons/librasicon.PNG" alt="Ilustração de mãos fazendo um sinal de Libras" width="320" height="320" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft about" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <div class="section__header"><p class="eyebrow">O projeto</p><h2 id="sobre-titulo">O que é e qual problema busca resolver</h2></div>
+        <div class="about__row">
+          <p class="about__text">O projeto busca desenvolver um sistema inteligente de tradução de Libras em tempo real, com visão computacional e inteligência artificial, para facilitar a comunicação entre pessoas surdas e profissionais durante atendimentos presenciais.</p>
+          <img class="about__icon" src="assets/icons/mudocegosurdo.PNG" alt="" width="220" height="140" loading="lazy" />
+        </div>
+        <div class="about__row about__row--reverse">
+          <img class="about__photo" src="assets/images/maos.PNG" alt="Duas mãos se conectam através de um rasgo em uma folha de papel, simbolizando a quebra de barreiras de comunicação" loading="lazy" />
+          <p class="about__text">Pessoas surdas ainda enfrentam dificuldades de comunicação em serviços públicos e outros ambientes de atendimento. A tecnologia entra como intermediadora, ajudando a reduzir essa barreira.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona" aria-labelledby="como-titulo">
+      <div class="container">
+        <div class="section__header"><p class="eyebrow">Como funciona</p><h2 id="como-titulo">Do sinal à comunicação</h2></div><ol class="steps"><li class="steps__item"><span class="steps__number" aria-hidden="true">1</span><div><h3>Captura</h3><p>A câmera captura os movimentos das mãos.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">2</span><div><h3>Detecção</h3><p>O MediaPipe identifica os pontos das mãos.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">3</span><div><h3>Reconhecimento</h3><p>O modelo de inteligência artificial classifica o sinal realizado.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">4</span><div><h3>Tradução</h3><p>O sistema converte o sinal reconhecido em texto e/ou áudio.</p></div></li><li class="steps__item"><span class="steps__number" aria-hidden="true">5</span><div><h3>Comunicação</h3><p>A informação é apresentada ao atendente.</p></div></li></ol>
+        <p class="stack-link"><a class="text-link" href="tradutor.html#fluxo">Ver o fluxo em detalhes</a></p>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="tecnologias" aria-labelledby="tec-titulo">
+      <div class="container">
+        <div class="section__header"><p class="eyebrow">Tecnologias</p><h2 id="tec-titulo">O que está por trás do sistema</h2></div><ul class="grid"><li class="card"><span class="card__badge" aria-hidden="true">Py</span><h3>Python</h3><p>Linguagem utilizada no desenvolvimento e na integração principal do sistema.</p></li><li class="card"><span class="card__badge" aria-hidden="true">CV</span><h3>OpenCV</h3><p>Captura e processamento de imagens.</p></li><li class="card"><span class="card__badge" aria-hidden="true">MP</span><h3>MediaPipe</h3><p>Detecção e extração dos pontos das mãos.</p></li><li class="card"><span class="card__badge" aria-hidden="true">TF</span><h3>TensorFlow</h3><p>Classificação dos sinais por meio de aprendizado de máquina.</p></li><li class="card"><span class="card__badge" aria-hidden="true">Fl</span><h3>Flask</h3><p>Comunicação e integração entre os componentes do sistema.</p></li><li class="card"><span class="card__badge" aria-hidden="true">PG</span><h3>PostgreSQL</h3><p>Armazenamento das estatísticas de utilização.</p></li><li class="card"><span class="card__badge" aria-hidden="true">TTS</span><h3>gTTS</h3><p>Conversão de texto em áudio.</p></li></ul>
+      </div>
+    </section>
+
+    <section class="section" id="objetivo" aria-labelledby="obj-titulo">
+      <div class="container">
+        <div class="section__header"><p class="eyebrow">Objetivo geral</p><h2 id="obj-titulo">Para onde o projeto aponta</h2></div>
+        <p class="statement">Desenvolver um sistema inteligente de atendimento em Libras para facilitar a comunicação entre pessoas surdas e profissionais durante o atendimento.</p>
+        <p class="stack-link"><a class="text-link" href="finalidade.html#objetivos">Ver os objetivos específicos</a></p>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-titulo">
+      <div class="container">
+        <h2 id="cta-titulo">Tecnologia para aproximar pessoas.</h2>
+        <p>A proposta é usar recursos computacionais para auxiliar na comunicação e contribuir para a inclusão de pessoas surdas.</p>
+        <div class="cta__actions">
+          <a class="btn btn--light btn--lg" href="tradutor.html">Conhecer o tradutor</a>
+          <a class="btn btn--outline-light btn--lg" href="comunidade.html#contato">Falar com os integrantes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <div>
+        <p class="footer__title">TraduLib</p>
+        <p>Inclusão da comunidade surda por meio da TI: desenvolvimento de um sistema inteligente de tradução de Libras em tempo real.</p>
+      </div>
+      <nav aria-label="Rodapé"><p class="footer__heading">Navegação</p><ul><li><a href="index.html">Home</a></li><li><a href="finalidade.html">Finalidade</a></li><li><a href="tradutor.html">Tradutor</a></li><li><a href="comunidade.html">Comunidade</a></li><li><a href="administrador.html">Administrador</a></li></ul></nav>
+      <div>
+        <p class="footer__heading">Projeto acadêmico</p>
+        <ul data-members="footer"></ul>
+        <p>Gestão da Tecnologia da Informação — Fatec</p>
+      </div>
+    </div>
+    <p class="footer__legal container">Trabalho acadêmico. O sistema não pretende substituir intérpretes humanos de Libras.</p>
+  </footer>
+
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget("https://vlibras.gov.br/app");</script>
+  <script type="module" src="js/main.js?v=5"></script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Administrador | TraduLib</title>
+  <meta
+    name="description"
+    content="Painel administrativo do sistema TraduLib."
+  />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Configurações de acessibilidade -->
+  <script>
+    (function () {
+      try {
+        var settings = JSON.parse(
+          localStorage.getItem("tradulib_a11y") || "{}"
+        );
+
+        var root = document.documentElement;
+        var levels = [0.875, 1, 1.125, 1.25, 1.375];
+
+        root.dataset.theme = settings.theme ||
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+
+        if (
+          levels[settings.level] &&
+          typeof settings.level === "number"
+        ) {
+          root.style.setProperty(
+            "--font-scale",
+            levels[settings.level]
+          );
+        }
+
+        if (settings.dyslexia === true) {
+          root.dataset.dyslexia = "on";
+        }
+      } catch (error) {
+        console.error("Erro ao carregar acessibilidade:", error);
+      }
+    })();
+  </script>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+  />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/variables.css?v=6" />
+  <link rel="stylesheet" href="css/reset.css?v=6" />
+  <link rel="stylesheet" href="css/base.css?v=6" />
+  <link rel="stylesheet" href="css/layout.css?v=6" />
+  <link rel="stylesheet" href="css/animations.css?v=6" />
+
+  <!-- Componentes -->
+  <link rel="stylesheet" href="css/components/buttons.css?v=6" />
+  <link rel="stylesheet" href="css/components/navbar.css?v=6" />
+  <link rel="stylesheet" href="css/components/hero.css?v=6" />
+  <link rel="stylesheet" href="css/components/tradutor.css?v=6" />
+  <link rel="stylesheet" href="css/components/about.css?v=6" />
+  <link rel="stylesheet" href="css/components/content.css?v=6" />
+  <link rel="stylesheet" href="css/components/accessibility.css?v=6" />
+
+  <!-- Dashboard administrativo -->
+  <link rel="stylesheet" href="css/components/admin-dashboard.css?v=6" />
+</head>
+
+<body>
+
+  <!-- Acessibilidade: pular navegação -->
+  <a class="skip-link" href="#conteudo-principal">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- ==================================================
+       NAVEGAÇÃO
+  ================================================== -->
+
+  <header class="navbar">
+    <div class="navbar__container container">
+
+      <a
+        href="index.html"
+        class="navbar__logo"
+        aria-label="TraduLib, página inicial"
+      >
+        <span class="navbar__logo-mark" aria-hidden="true">T</span>
+        <span>TraduLib</span>
+      </a>
+
+      <button
+        class="navbar__toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <nav
+        class="navbar__nav"
+        id="navMenu"
+        aria-label="Navegação principal"
+      >
+        <ul class="navbar__links">
+          <li>
+            <a href="index.html" class="navbar__link">Home</a>
+          </li>
+
+          <li>
+            <a href="finalidade.html" class="navbar__link">
+              Finalidade
+            </a>
+          </li>
+
+          <li>
+            <a href="tradutor.html" class="navbar__link">
+              Tradutor
+            </a>
+          </li>
+
+          <li>
+            <a href="comunidade.html" class="navbar__link">
+              Comunidade
+            </a>
+          </li>
+
+          <li>
+            <a href="comunidade.html#contato" class="navbar__link">
+              Contatos
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="administrador.html"
+              class="navbar__link"
+              aria-current="page"
+            >
+              Administrador
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ==================================================
+       CONTEÚDO PRINCIPAL
+  ================================================== -->
+
+  <main id="conteudo-principal">
+
+    <section class="admin" aria-labelledby="admin-titulo">
+
+      <div class="container">
+
+        <div class="admin__card">
+
+          <!-- ==================================================
+               LOGIN ADMINISTRATIVO
+          ================================================== -->
+
+          <p class="eyebrow">Área restrita</p>
+
+          <h1 id="admin-titulo">Administrador</h1>
+
+          <form id="adminForm" novalidate>
+
+            <div class="field">
+
+              <label for="adminUser">Usuário</label>
+
+              <input
+                id="adminUser"
+                type="text"
+                autocomplete="username"
+                required
+                aria-describedby="userError"
+              />
+
+              <p
+                class="field__error"
+                id="userError"
+                aria-live="polite"
+              ></p>
+
+            </div>
+
+            <div class="field">
+
+              <label for="adminPass">Senha</label>
+
+              <div class="field__row">
+
+                <input
+                  id="adminPass"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                  aria-describedby="passError"
+                />
+
+                <button
+                  type="button"
+                  class="btn btn--secondary"
+                  id="togglePass"
+                  aria-pressed="false"
+                  aria-controls="adminPass"
+                >
+                  Mostrar
+                </button>
+
+              </div>
+
+              <p
+                class="field__error"
+                id="passError"
+                aria-live="polite"
+              ></p>
+
+            </div>
+
+            <p
+              class="form-alert"
+              id="formAlert"
+              role="alert"
+              hidden
+            ></p>
+
+            <button
+              class="btn btn--primary btn--lg"
+              id="adminSubmit"
+              type="submit"
+            >
+              Entrar
+            </button>
+
+          </form>
+
+          <!-- ==================================================
+               DASHBOARD ADMINISTRATIVO
+          ================================================== -->
+
+          <div id="adminPanel" hidden>
+
+            <section
+              class="dashboard"
+              id="adminDashboard"
+              aria-labelledby="dashboardTitle"
+            >
+
+              <!-- Cabeçalho do painel -->
+
+              <div class="dashboard__header">
+
+                <div>
+
+                  <p class="eyebrow">Painel de controle</p>
+
+                  <h2 id="dashboardTitle" tabindex="-1">
+                    Visão geral do TraduLib
+                  </h2>
+
+                  <p class="dashboard__subtitle">
+                    Acompanhe a utilização e o desempenho do sistema.
+                  </p>
+
+                </div>
+
+                <!-- Filtros -->
+
+                <div class="dashboard__toolbar">
+
+                  <label for="dashboardPeriod">
+                    Período
+                  </label>
+
+                  <select id="dashboardPeriod">
+                    <option value="7">Últimos 7 dias</option>
+                    <option value="30" selected>Últimos 30 dias</option>
+                    <option value="90">Últimos 90 dias</option>
+                    <option value="365">Últimos 365 dias</option>
+                  </select>
+
+                  <button
+                    type="button"
+                    class="btn btn--primary"
+                    id="dashboardRefresh"
+                  >
+                    Atualizar
+                  </button>
+
+                </div>
+
+              </div>
+
+              <!-- Status da atualização -->
+
+              <p
+                class="dashboard__status"
+                id="dashboardStatus"
+                role="status"
+                aria-live="polite"
+              >
+                Aguardando dados...
+              </p>
+
+              <!-- ==================================================
+                   INDICADORES
+              ================================================== -->
+
+              <div class="dashboard__metrics">
+
+                <article class="dashboard-metric">
+
+                  <span
+                    class="dashboard-metric__icon"
+                    aria-hidden="true"
+                  >
+                    ↗
+                  </span>
+
+                  <p>Reconhecimentos</p>
+
+                  <strong id="metricRecognitions">—</strong>
+
+                  <small>Total no período</small>
+
+                </article>
+
+                <article class="dashboard-metric">
+
+                  <span
+                    class="dashboard-metric__icon"
+                    aria-hidden="true"
+                  >
+                    ◉
+                  </span>
+
+                  <p>Acessos</p>
+
+                  <strong id="metricAccesses">—</strong>
+
+                  <small>Sessões iniciadas</small>
+
+                </article>
+
+                <article class="dashboard-metric">
+
+                  <span
+                    class="dashboard-metric__icon"
+                    aria-hidden="true"
+                  >
+                    ◷
+                  </span>
+
+                  <p>Tempo de utilização</p>
+
+                  <strong id="metricUsage">—</strong>
+
+                  <small>Tempo acumulado</small>
+
+                </article>
+
+                <article class="dashboard-metric">
+
+                  <span
+                    class="dashboard-metric__icon"
+                    aria-hidden="true"
+                  >
+                    ◎
+                  </span>
+
+                  <p>Confiança média</p>
+
+                  <strong id="metricConfidence">—</strong>
+
+                  <small>Das previsões registradas</small>
+
+                </article>
+
+                <article class="dashboard-metric dashboard-metric--wide">
+
+                  <span
+                    class="dashboard-metric__icon"
+                    aria-hidden="true"
+                  >
+                    !
+                  </span>
+
+                  <p>Erros registrados</p>
+
+                  <strong id="metricErrors">—</strong>
+
+                  <small>Ocorrências no período</small>
+
+                </article>
+
+              </div>
+
+              <!-- ==================================================
+                   GRÁFICOS
+              ================================================== -->
+
+              <div class="dashboard__charts">
+
+                <!-- Evolução dos reconhecimentos -->
+
+                <article class="dashboard-card dashboard-card--chart">
+
+                  <div class="dashboard-card__header">
+
+                    <div>
+
+                      <h3>
+                        Evolução dos reconhecimentos
+                      </h3>
+
+                      <p>
+                        Quantidade de sinais reconhecidos por dia.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  <canvas
+                    id="evolutionChart"
+                    role="img"
+                    aria-label="Gráfico de evolução diária dos reconhecimentos"
+                  ></canvas>
+
+                </article>
+
+                <!-- Ranking dos sinais -->
+
+                <article class="dashboard-card">
+
+                  <div class="dashboard-card__header">
+
+                    <div>
+
+                      <h3>Sinais mais reconhecidos</h3>
+
+                      <p>
+                        Ranking no período selecionado.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  <div
+                    id="rankingList"
+                    class="dashboard-ranking"
+                  >
+                    <p>Carregando ranking...</p>
+                  </div>
+
+                </article>
+
+              </div>
+
+              <!-- ==================================================
+                   TABELA DE RECONHECIMENTOS
+              ================================================== -->
+
+              <article class="dashboard-card dashboard-card--table">
+
+                <div class="dashboard-card__header">
+
+                  <div>
+
+                    <h3>Reconhecimentos recentes</h3>
+
+                    <p>
+                      Últimos sinais registrados pelo sistema.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="dashboard-table-wrapper">
+
+                  <table class="dashboard-table">
+
+                    <thead>
+                      <tr>
+                        <th scope="col">Sinal</th>
+                        <th scope="col">Confiança</th>
+                        <th scope="col">Data e horário</th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="recognitionsTable">
+
+                      <tr>
+                        <td colspan="3">
+                          Carregando...
+                        </td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </article>
+
+              <!-- ==================================================
+                   TABELA DE ACESSOS
+              ================================================== -->
+
+              <article class="dashboard-card dashboard-card--table">
+
+                <div class="dashboard-card__header">
+
+                  <div>
+
+                    <h3>Acessos recentes</h3>
+
+                    <p>
+                      Histórico de utilização do tradutor.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="dashboard-table-wrapper">
+
+                  <table class="dashboard-table">
+
+                    <thead>
+                      <tr>
+                        <th scope="col">Identificação</th>
+                        <th scope="col">Início</th>
+                        <th scope="col">Duração</th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="accessesTable">
+
+                      <tr>
+                        <td colspan="3">
+                          Carregando...
+                        </td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </article>
+
+              <!-- ==================================================
+                   AÇÕES DO ADMINISTRADOR
+              ================================================== -->
+
+              <div class="dashboard__footer">
+
+                <a
+                  class="btn btn--secondary"
+                  href="index.html"
+                >
+                  Voltar ao site
+                </a>
+
+                <button
+                  type="button"
+                  class="btn btn--secondary"
+                  id="adminLogout"
+                >
+                  Encerrar sessão
+                </button>
+
+              </div>
+
+            </section>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       RODAPÉ
+  ================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer__container container">
+
+      <div>
+
+        <p class="footer__title">TraduLib</p>
+
+        <p>
+          Inclusão da comunidade surda por meio da TI:
+          desenvolvimento de um sistema inteligente de tradução
+          de Libras em tempo real.
+        </p>
+
+      </div>
+
+      <nav aria-label="Navegação do rodapé">
+
+        <p class="footer__heading">Navegação</p>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="finalidade.html">Finalidade</a></li>
+          <li><a href="tradutor.html">Tradutor</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="administrador.html">Administrador</a></li>
+        </ul>
+
+      </nav>
+
+      <div>
+
+        <p class="footer__heading">Projeto acadêmico</p>
+
+        <ul data-members="footer"></ul>
+
+        <p>
+          Gestão da Tecnologia da Informação — Fatec
+        </p>
+
+      </div>
+
+    </div>
+
+    <p class="footer__legal container">
+      Trabalho acadêmico. O sistema não pretende substituir
+      intérpretes humanos de Libras.
+    </p>
+
+  </footer>
+
+  <!-- ==================================================
+       VLibras
+  ================================================== -->
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <script>
+    new window.VLibras.Widget("https://vlibras.gov.br/app");
+  </script>
+
+  <!-- JavaScript principal -->
+
+  <script type="module" src="js/main.js?v=6"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* ==========================================================================
+   LAYOUT.CSS
+   Estrutura genérica de largura/alinhamento, reutilizada por toda seção.
+   Espaçamento e grid específicos de cada bloco ficam em components/.
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}

@@ -1,0 +1,24 @@
+/* BUTTONS.CSS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-semibold);
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.btn--lg { padding: var(--space-3) var(--space-8); font-size: 1rem; }
+.btn--primary { background-color: var(--color-primary); color: #fff; }
+.btn--primary:hover { filter: brightness(0.9); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn--secondary { border-color: var(--color-primary); color: var(--color-primary-dark); background: transparent; }
+.btn--secondary:hover { background-color: var(--color-primary-soft); transform: translateY(-2px); }
+.btn--light { background: #fff; color: #1d4ed8; }
+.btn--light:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn--outline-light { border-color: #fff; color: #fff; }
+.btn--outline-light:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(0.98); box-shadow: none; }
